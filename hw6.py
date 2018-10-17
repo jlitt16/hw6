@@ -2,6 +2,15 @@ import re
 import unittest
 
 def sumNums(fileName):
+    inFile = open(fileName,"r")
+    lines = inFile.readlines()
+    counter = 0
+    for x in lines:
+        find_all_numbers = x.strip()
+        y = re.findall('[0-9]\d*',find_all_numbers)
+        for num in y:
+            counter +=int(num)
+    return(counter)
     pass
 
 def countWord(fileName, word):
