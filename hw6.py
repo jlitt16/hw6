@@ -14,9 +14,28 @@ def sumNums(fileName):
     pass
 
 def countWord(fileName, word):
+    inFile = open(fileName,"r")
+    lines = inFile.readlines()
+    counter = 0
+    for x in lines:
+        find_all_words = x.strip()
+        y = re.findall(r"\b[Cc]omputer\b",find_all_words)
+        for word in y:
+            counter += 1
+    return(counter)
     pass
-
+countWord("regex_sum_42.txt","computer")
 def listURLs(fileName):
+    inFile = open(fileName)
+    lines = inFile.readlines()
+    counter = 0
+    for x in lines:
+        find_all_url = x.strip()
+        y = re.findall('w*-c.m',find_all_url)
+        print(y)
+        # for num in y:
+        #     counter +=1
+    # return(counter)
     pass
 
 
