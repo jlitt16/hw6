@@ -32,10 +32,11 @@ def listURLs(fileName):
     counter = []
     for x in lines:
         find_all_url = x.strip()
-        y = re.findall('(w{3}.com',find_all_url)
+        y = re.findall('www.(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+',find_all_url)
         for url in y:
             counter.append(url)
-    print(counter)
+    inFile.close()
+    return(counter)
     pass
 
 
